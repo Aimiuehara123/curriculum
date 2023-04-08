@@ -17,12 +17,12 @@ public class Lesson1_17_18{
         double add3 = multiply(0.3,0.3);
         System.out.println(add3);
        //Q5呼び出し       
-        int[] nums = generateRandomNumbers(5);
+        int[] nums = generateRandomNumbers(3);
         for (int i : nums) {
             System.out.println(i);
         }
        //Q6呼び出し
-        double ave = getAverage(5);
+        double ave = getAverage(nums);
         System.out.println(ave);
      }
 	
@@ -48,24 +48,24 @@ public class Lesson1_17_18{
 	    }
 	 
 		// Q5：引数として数字を渡すと、1～100までのランダムな数字を引数の値分格納して返すメソッド（関数）を作成してください。
-	    public static int[] generateRandomNumbers(int num) {
-	        int[] nums = new int[num];
-	        for (int i = 0; i < num; i++) {
-	            nums[i] = (int) (Math.random() * 100) + 1;
+	    public static int[] generateRandomNumbers(int n) {
+	        int[] result = new int[n];
+	        for (int i = 0; i < n; i++) {
+	            result[i] = (int) (Math.random() * 100) + 1;
 	        }
-	        return nums;
+	        return result;
 	    }
 
 	       
 		// Q6：Q5で作成した関数を用いて、このメソッド（関数）の引数をQ5のメソッド（関数）の引数に渡して
 		//     配列の要素の平均値を返すメソッド（関数）を作成してください。
-	    public static double getAverage(int num) {
-	        int[] nums = generateRandomNumbers(num);
+	    public static double getAverage(int[] n) {
 	        int sum = 0;
-	        for (int n : nums) {
-	            sum += n;
+	        for (int i = 0; i < n.length; i++) {
+	            sum += n[i];
 	        }
-	        return (double) sum / num;
+	        return (double) sum / n.length;
 	    }
 		}
+
 
