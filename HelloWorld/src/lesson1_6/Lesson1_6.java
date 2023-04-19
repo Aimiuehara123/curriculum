@@ -31,11 +31,10 @@ public class Lesson1_6 {
 //	例）
 //	あなたの年齢を予想します。
 //	あなたの年齢はおそらく〇〇歳ですね？
+  Random random = new Random();
+  int age = random.nextInt(101);  // 0~100の乱数を生成
   System.out.println("あなたの年齢を予想します。");
-  Random rnd = new Random();
-  for(int x = 0; x < 10; x++) {
-      int value = rnd.nextInt(101) + 1;
-  System.out.println( "あなたの年齢はおそらく" + value + " 歳ですね？");
+  System.out.printf("あなたの年齢はおそらく%d歳ですね？%n", age);
   		}
-	}
+	
 }
